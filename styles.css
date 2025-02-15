@@ -1,0 +1,653 @@
+/* استيراد خطوط من Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #4CAF50; /* اللون الأخضر */
+    --secondary-color: #2C3E50; /* اللون الأزرق الداكن */
+    --background-color: #F4F7F6; /* لون الخلفية الفاتح */
+    --text-color: #333; /* لون النصوص */
+    --hover-color: #45a049; /* لون التفعيل */
+    --gradient-color: linear-gradient(135deg, #4CAF50 0%, #2C3E50 100%); /* تدرج لوني */
+    --glass-color: rgba(255, 255, 255, 0.2); /* تأثير الزجاج */
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* ظل بسيط */
+    --transition: all 0.3s ease; /* انتقال سلس */
+}
+
+body {
+    font-family: 'Tajawal', 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: right;
+    line-height: 1.6;
+}
+
+header {
+    background: var(--gradient-color);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.01%);
+    background-size: 20px 20px;
+    animation: animateBackground 10s linear infinite;
+}
+
+@keyframes animateBackground {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+header p {
+    margin: 15px 0 0;
+    font-size: 1.3rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+nav {
+    background-color: var(--glass-color);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: rgb(33, 138, 20);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: var(--glass-color);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a:hover {
+    background: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li a i {
+    margin-left: 10px;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+section h2 {
+    font-size: 2.8rem;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    width: 120px;
+    height: 4px;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.grades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.grade-card {
+    background: var(--glass-color);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grade-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.grade-card h3 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.grade-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.grade-card ul li {
+    margin: 20px 0;
+}
+
+.grade-card ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    display: block;
+    padding: 15px;
+    border-radius: 10px;
+    background: var(--glass-color);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grade-card ul li a:hover {
+    background: var(--primary-color);
+    color: rgb(218, 205, 205);
+    transform: translateX(10px);
+}
+
+.grade-card ul li a i {
+    margin-left: 10px;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: rgb(8, 88, 15);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    box-shadow: var(--shadow);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* تحسين عرض الفيديوهات */
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.video-card {
+    background: var(--glass-color);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.video-card video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px 20px 0 0;
+}
+
+.video-card h3 {
+    padding: 20px;
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+/* تصميم النافذة المنبثقة */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    background: var(--glass-color);
+    backdrop-filter: blur(20px);
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    text-align: right;
+    box-shadow: var(--shadow);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+.close:hover {
+    color: var(--primary-color);
+}
+
+#uploadForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#uploadForm label {
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+#uploadForm input, #uploadForm button {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1rem;
+    background: var(--glass-color);
+    backdrop-filter: blur(5px);
+    color: var(--text-color);
+}
+
+#uploadForm button {
+    background: var(--primary-color);
+    color: rgb(19, 87, 5);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#uploadForm button:hover {
+    background: var(--hover-color);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(235, 229, 229, 0.2);
+}/* استيراد خطوط من Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #4CAF50; /* اللون الأخضر */
+    --secondary-color: #2C3E50; /* اللون الأزرق الداكن */
+    --background-color: #F4F7F6; /* لون الخلفية الفاتح */
+    --text-color: #333; /* لون النصوص */
+    --hover-color: #45a049; /* لون التفعيل */
+    --gradient-color: linear-gradient(135deg, #4CAF50 0%, #2C3E50 100%); /* تدرج لوني */
+    --glass-color: rgba(255, 255, 255, 0.2); /* تأثير الزجاج */
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* ظل بسيط */
+    --transition: all 0.3s ease; /* انتقال سلس */
+}
+
+body {
+    font-family: 'Tajawal', 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: right;
+    line-height: 1.6;
+}
+
+header {
+    background: var(--gradient-color);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.01%);
+    background-size: 20px 20px;
+    animation: animateBackground 10s linear infinite;
+}
+
+@keyframes animateBackground {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+header p {
+    margin: 15px 0 0;
+    font-size: 1.3rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+nav {
+    background-color: var(--glass-color);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: rgb(33, 138, 20);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: var(--glass-color);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a:hover {
+    background: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li a i {
+    margin-left: 10px;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+section h2 {
+    font-size: 2.8rem;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    width: 120px;
+    height: 4px;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.grades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.grade-card {
+    background: var(--glass-color);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grade-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.grade-card h3 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.grade-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.grade-card ul li {
+    margin: 20px 0;
+}
+
+.grade-card ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    display: block;
+    padding: 15px;
+    border-radius: 10px;
+    background: var(--glass-color);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grade-card ul li a:hover {
+    background: var(--primary-color);
+    color: rgb(218, 205, 205);
+    transform: translateX(10px);
+}
+
+.grade-card ul li a i {
+    margin-left: 10px;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: rgb(8, 88, 15);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    box-shadow: var(--shadow);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* تحسين عرض الفيديوهات */
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.video-card {
+    background: var(--glass-color);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.video-card video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px 20px 0 0;
+}
+
+.video-card h3 {
+    padding: 20px;
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+/* تصميم النافذة المنبثقة */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    background: var(--glass-color);
+    backdrop-filter: blur(20px);
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    text-align: right;
+    box-shadow: var(--shadow);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+.close:hover {
+    color: var(--primary-color);
+}
+
+#uploadForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#uploadForm label {
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+#uploadForm input, #uploadForm button {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1rem;
+    background: var(--glass-color);
+    backdrop-filter: blur(5px);
+    color: var(--text-color);
+}
+
+#uploadForm button {
+    background: var(--primary-color);
+    color: rgb(19, 87, 5);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#uploadForm button:hover {
+    background: var(--hover-color);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(235, 229, 229, 0.2);
+}
