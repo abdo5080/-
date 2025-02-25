@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المساعد الذكي لإدارة المهام</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 المساعد الذكي لإدارة مهامك</h1>
+        <p>أدخل مهامك وسيتم تنظيم وقتك بذكاء! ⏳</p>
+        
+        <input type="text" id="taskInput" placeholder="أدخل مهمتك...">
+        <input type="number" id="taskTime" placeholder="الوقت المتوقع (دقائق)">
+        <button onclick="addTask()">إضافة المهمة</button>
+
+        <h2>📌 قائمة المهام</h2>
+        <ul id="taskList"></ul>
+
+        <h2>🔍 تحليل المهام بواسطة الذكاء الاصطناعي</h2>
+        <p id="aiSuggestion">سيتم عرض الاقتراحات هنا...</p>
+
+        <h2>📊 تحليلات أسبوعية</h2>
+        <p id="weeklyAnalysis">جارٍ التحليل...</p>
+    </div>
+
+    <script src="scrip.js"></script>
+</body>
+</html>
